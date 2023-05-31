@@ -11,6 +11,7 @@
 </head>
 <body>
 <div align="center">
+    <h1>хуй</h1>
     <h2>Создание Deployment конфигурации</h2>
     <form:form action="createDeployment" method="post" modelAttribute="deploymentConfig">
         <table border="0" cellpadding="5">
