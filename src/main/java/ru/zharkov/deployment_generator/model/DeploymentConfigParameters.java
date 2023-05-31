@@ -15,6 +15,10 @@ public class DeploymentConfigParameters {
 
     String portNumber;
 
+    String envName;
+
+    String envValue;
+
     String strategyType;
 
     String maxUnavailable;
@@ -28,9 +32,5 @@ public class DeploymentConfigParameters {
     String requestCPU;
 
     String requestMemory;
-
-    String envName;
-
-    String envValue;
 
 }
