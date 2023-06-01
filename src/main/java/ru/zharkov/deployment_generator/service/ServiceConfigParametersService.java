@@ -19,7 +19,7 @@ public class ServiceConfigParametersService extends FileCreationService{
         resultString.append("    - protocol: ").append(parameters.getProtocolType()).append("\n");
         resultString.append("      port: ").append(parameters.getPortNumber()).append("\n");
         resultString.append("      targetPort: ").append(parameters.getTargetPort()).append("\n");
-        resultString.append("  type: ").append(parameters.getTargetPort()).append("\n");
+        resultString.append("  type: ").append(parameters.getServiceType()).append("\n");
         return resultString.toString();
     }
 }
