@@ -22,11 +22,24 @@
         .form-container .form-group label {
             text-align: left;
         }
+        .loading-indicator {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        $(document).ready(function() {
+            $("form").on("submit", function() {
+                $(".loading-indicator").show();
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
     <div class="text-center">
+        <h1>хуй</h1>
         <h2>Создание Deployment конфигурации</h2>
     </div>
     <div class="form-container">
@@ -95,6 +108,9 @@
             </div>
             <div class="text-center">
                 <input type="submit" value="Сгенерировать" class="btn btn-primary">
+            </div>
+            <div class="loading-indicator">
+                <img src="https://i.gifer.com/3Ypj.gif" alt="Loading..." width="50" height="50">
             </div>
         </form:form>
     </div>
