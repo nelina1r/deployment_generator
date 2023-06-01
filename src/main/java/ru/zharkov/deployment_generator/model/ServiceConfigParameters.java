@@ -3,7 +3,7 @@ package ru.zharkov.deployment_generator.model;
 import lombok.Data;
 
 @Data
-public class ServiceConfigParameter {
+public class ServiceConfigParameters {
 
     String serviceName;
 

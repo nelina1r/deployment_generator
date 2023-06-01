@@ -25,7 +25,7 @@ public class DeploymentConfigParametersController {
     }
 
     @PostMapping(value = "/createDeployment")
-    public ResponseEntity<FileSystemResource> saveMaintenance(@ModelAttribute("deploymentConfig") DeploymentConfigParameters configParameters) {
-        return deploymentService.createDeploymentFile(deploymentService.buildTextOfFile(configParameters));
+    public ResponseEntity<FileSystemResource> createDeploymentFile(@ModelAttribute("deploymentConfig") DeploymentConfigParameters configParameters) {
+        return deploymentService.createDeploymentFile(deploymentService.buildTextOfFile(configParameters), "deployment");
     }
 }

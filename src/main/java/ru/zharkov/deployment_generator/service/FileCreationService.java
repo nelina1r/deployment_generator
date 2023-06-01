@@ -13,20 +13,17 @@ import java.io.IOException;
 @Service
 public class FileCreationService {
 
-    public ResponseEntity<FileSystemResource> createDeploymentFile(String content){
+    public ResponseEntity<FileSystemResource> createDeploymentFile(String content, String filePrefix){
 
         try {
-            // Создаем временный файл
-            File tempFile = File.createTempFile("deployment", ".yaml");
+            File tempFile = File.createTempFile(filePrefix, ".yaml");
             FileWriter writer = new FileWriter(tempFile);
             writer.write(content);
             writer.close();
 
-            // Устанавливаем заголовки ответа
             HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=deployment.yaml");
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filePrefix + ".yaml");
 
-            // Возвращаем файл в качестве ресурса
             return ResponseEntity
                     .ok()
                     .headers(headers)
@@ -35,7 +32,6 @@ public class FileCreationService {
                     .body(new FileSystemResource(tempFile));
         } catch (IOException e) {
             e.printStackTrace();
-            // Обработка ошибки, если что-то пошло не так
             return ResponseEntity
                     .badRequest()
                     .body(null);
