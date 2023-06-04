@@ -19,6 +19,7 @@
             max-width: 400px;
             margin: 0 auto;
         }
+
         .form-container .form-group {
             text-align: left;
         }
@@ -54,9 +55,13 @@
                 <form:input path="serviceType" class="form-control"/>
             </div>
             <div class="text-center">
-                <input type="submit" value="Сгенерировать" class="btn btn-primary">
+                <div style="margin-top: 10px;"> <!-- Добавленный div с отступом -->
+                    <input type="submit" value="Сгенерировать" class="btn btn-primary">
+                </div>
             </div>
         </form:form>
+
+        <div id="error-message" class="alert alert-danger" style="display: none; margin-top: 10px;"></div>
     </div>
 </div>
 </body>

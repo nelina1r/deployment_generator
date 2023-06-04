@@ -1,5 +1,6 @@
 package ru.zharkov.deployment_generator.service;
 
+import lombok.extern.java.Log;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -11,10 +12,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 @Service
+@Log
 public class FileCreationService {
 
     public ResponseEntity<FileSystemResource> createDeploymentFile(String content, String filePrefix){
-
+        log.warning("в методе с файлом");
         try {
             File tempFile = File.createTempFile(filePrefix, ".yaml");
             FileWriter writer = new FileWriter(tempFile);

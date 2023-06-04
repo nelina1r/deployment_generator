@@ -7,13 +7,13 @@ public class DeploymentConfigParameters {
 
     String serviceName;
 
-    String replicaCount;
+    String replicaCount; //только цифры
 
     String containerName;
 
     String imageName;
 
-    String portNumber;
+    String portNumber; //только цифры
 
     String envName;
 
@@ -21,16 +21,16 @@ public class DeploymentConfigParameters {
 
     String strategyType;
 
-    String maxUnavailable;
+    String maxUnavailable; //только цифры
 
-    String maxSurge;
+    String maxSurge; //только цифры
 
-    String limitCPU;
+    String limitCPU; //только цифры
 
-    String limitMemory;
+    String limitMemory; //только цифры
 
-    String requestCPU;
+    String requestCPU; //только цифры
 
-    String requestMemory;
+    String requestMemory; //только цифры
 
 }
