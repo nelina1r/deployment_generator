@@ -11,51 +11,51 @@ import java.util.Map;
 @Log
 public class DeploymentConfigParametersService extends FileCreationService {
 
-    public boolean checkValidData(DeploymentConfigParameters parameters) throws Exception{
-        if(parameters.getServiceName().isBlank()){
+    public boolean checkValidData(DeploymentConfigParameters parameters) throws Exception {
+        if (parameters.getServiceName().isBlank()) {
             throw new Exception("поле serviceName пустое");
         }
-        if(parameters.getContainerName().isBlank()){
+        if (parameters.getContainerName().isBlank()) {
             throw new Exception("поле containerName пустое");
         }
-        if(parameters.getImageName().isBlank()){
+        if (parameters.getImageName().isBlank()) {
             throw new Exception("поле imageName пустое");
         }
-        if(parameters.getEnvName().isBlank()){
+        if (parameters.getEnvName().isBlank()) {
             throw new Exception("поле envName пустое");
         }
-        if(parameters.getEnvValue().isBlank()){
+        if (parameters.getEnvValue().isBlank()) {
             throw new Exception("поле envValue пустое");
         }
-        if(parameters.getStrategyType().isBlank()){
+        if (parameters.getStrategyType().isBlank()) {
             throw new Exception("поле strategyType записано неверно");
         }
-        if(parameters.getEnvValue().isBlank()){
+        if (parameters.getEnvValue().isBlank()) {
             log.warning(parameters.getEnvValue());
             throw new Exception("поле envValue пустое");
         }
-        if(parameters.getReplicaCount().isBlank() || !isDigits(parameters.getReplicaCount())){
+        if (parameters.getReplicaCount().isBlank() || !isDigits(parameters.getReplicaCount())) {
             throw new Exception("поле replicaCount записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getPortNumber().isBlank() || !isDigits(parameters.getPortNumber())){
+        if (parameters.getPortNumber().isBlank() || !isDigits(parameters.getPortNumber())) {
             throw new Exception("поле portNumber записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getMaxUnavailable().isBlank() || !isDigits(parameters.getMaxUnavailable())){
+        if (parameters.getMaxUnavailable().isBlank() || !isDigits(parameters.getMaxUnavailable())) {
             throw new Exception("поле maxUnavailable записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getMaxSurge().isBlank() || !isDigits(parameters.getMaxSurge())){
+        if (parameters.getMaxSurge().isBlank() || !isDigits(parameters.getMaxSurge())) {
             throw new Exception("поле maxSurge записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getLimitCPU().isBlank() || !isDigits(parameters.getLimitCPU())){
+        if (parameters.getLimitCPU().isBlank() || !isDigits(parameters.getLimitCPU())) {
             throw new Exception("поле limitCPU записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getLimitMemory().isBlank() || !isDigits(parameters.getLimitMemory())){
+        if (parameters.getLimitMemory().isBlank() || !isDigits(parameters.getLimitMemory())) {
             throw new Exception("поле limitMemory записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getRequestCPU().isBlank() || !isDigits(parameters.getRequestCPU())){
+        if (parameters.getRequestCPU().isBlank() || !isDigits(parameters.getRequestCPU())) {
             throw new Exception("поле requestCPU записано неверно (должны присутствовать только цифры)");
         }
-        if(parameters.getRequestMemory().isBlank() || !isDigits(parameters.getRequestMemory())){
+        if (parameters.getRequestMemory().isBlank() || !isDigits(parameters.getRequestMemory())) {
             throw new Exception("поле requestMemory записано неверно (должны присутствовать только цифры)");
         }
         return true;
@@ -120,6 +120,6 @@ public class DeploymentConfigParametersService extends FileCreationService {
 
 
     public boolean isDigits(String input) {
-        return input.matches("\\d+");
+        return input.matches("\\d+(\\.\\d+)?");
     }
 }
